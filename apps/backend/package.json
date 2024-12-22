@@ -1,0 +1,40 @@
+{
+  "name": "backend-repo",
+  "version": "1.0.0",
+  "description": "Backend service for the monorepo",
+  "main": "dist/core/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "npm run clean && npm run build && node dist/core/app.js",
+    "dev": "npm run build && firebase emulators:start --only functions",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "lint:fix": "eslint 'src/**/*.{ts,js}' --fix",
+    "clean": "rm -rf dist",
+    "debug": "ts-node --inspect src/core/app.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.1",
+    "firebase-functions": "^6.2.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.57.1",
+    "@shared/user": "^1.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "eslint": "^9.17.0",
+    "globals": "^13.24.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
